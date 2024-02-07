@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora de Gastos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <header>
+        <div class="container-header">
+            <i class="bi bi-piggy-bank-fill icon-title"></i>
+            <h1 class="title-header">Calculadora <br> de Gastos</h1>
+        </div>
+    </header>
+    <section class="containers">
+        <div class="container-section">
+            <div class="container-item">
+                <div class="title-item" style="background-color: #e6a2a8">
+                    <i class="bi bi-house icon-item" style="color: #5e2129"></i>
+                    <h2 style="color: #fff">Casa</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Aluguel/Financiamento</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value"/>
+                    </p>
+                    <p>
+                        <label>IPTU</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value"/>
+                    </p>
+                    <p>
+                        <label>Condomínio</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Água</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Luz</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Gás</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Tv a Cabo</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Internet</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Telefone</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Serviços e produtos de limpeza</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Empregado doméstico</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+            <div class="container-item">
+                <div class="title-item" style="background-color: #FFBD00;">
+                    <i class="bi bi-basket-fill icon-item" style="color: #5DB7DE;"></i>
+                    <h2 style="color: #fff">Alimentação</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Mercado</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Fora de casa</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+            <div class="container-item">
+                <div class="title-item" style="background-color: #C79174">
+                    <i class="bi bi-heart-fill icon-item" icon-item style="color: rgb(255, 76, 76);"></i>
+                    <h2 style="color: #fff">Saúde e Beleza</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Remédios</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Plano de Saúde</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Médicos e psícologos</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Produtos de higiene pessoal</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Academia</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Salão de beleza/Barbearia</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+            <div class="container-item">
+                <div class="title-item" style="background-color: #00aaff">
+                    <i class="bi bi-bus-front-fill icon-item" icon-item style="color: #FF8811;"></i>
+                    <h2 style="color: #fff">Transporte</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Transporte público</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Gasolina</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Estacionamento</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Manutenção do carro</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Seguro</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>IPVA</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Táxi/Apps de transporte</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+            <div class="container-item">
+                <div class="title-item" style="background-color: #45538B">
+                    <i class="bi bi-pencil-square icon-item" icon-item style="color: #A66555;"></i>
+                    <h2 style="color: #fff">Educação</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Mensalidade</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Material Escolar</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Cursos</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+            <div class="container-item">
+                <div class="title-item" style="background-color: #65A1AD">
+                    <i class="bi bi-controller icon-item" icon-item style="color: #C2E812;"></i>
+                    <h2 style="color: #fff">Lazer e Extras</h2>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Viagens</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Roupas</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Cinema</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Shows</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Festas</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Presentes</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="labels">
+                    <p>
+                        <label>Animais domésticos</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                    <p>
+                        <label>Outros</label>
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" />
+                    </p>
+                </div>
+                <div class="total">
+                    <p>Total</p>
+                    <p class="valor-total-categoria">R$ 0,00</p>
+                </div>
+                <span></span>
+            </div>
+        </div>
+        <div class="containes-valores">
+            <div class="salario">
+                <h2>Salário</h2>
+                <p>
+                    <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value-salario" />
+                </p>
+            </div>
+            <div class="gastos-totais">
+                <h2>Seus Gastos</h2>
+                <div class="container-gastos">
+                    <div class="descricao-item">
+                        <p style="color: #e6a2a8; font-weight: bold;">Casa</p>
+                        <p style="color: #FFBD00; font-weight: bold;">Alimentação</p>
+                        <p style="color: #C79174; font-weight: bold;">Saúde e Beleza</p>
+                        <p style="color: #00aaff; font-weight: bold;">Transporte</p>
+                        <p style="color: #45538B; font-weight: bold;">Educação</p>
+                        <p style="color: #65A1AD; font-weight: bold;">Lazer e Extras</p>
+                    </div>
+                    <div class="descricao-valor">
+                        <p class="lbl-casa">R$ 0,00</p>
+                        <p class="lbl-alimentacao">R$ 0,00</p>
+                        <p class="lbl-saude-beleza">R$ 0,00</p>
+                        <p class="lbl-transporte">R$ 0,00</p>
+                        <p class="lbl-educacao">R$ 0,00</p>
+                        <p class="lbl-lazer-extras">R$ 0,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-mensagem">
+                <h3>Saldo</h3>
+                <p class="valor"></p>
+                <p class="mensagem"></p>
+            </div>
+        </div>
+    </section>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
