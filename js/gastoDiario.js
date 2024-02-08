@@ -85,7 +85,7 @@ function criaIcone(categoria) {
     } else {
         icone = document.createElement('i')
         let listIcon = icons[5].split(' ');
-        icone.style.color = '#C2E812;';
+        icone.style.color = '#C2E812';
         icone.classList.add(listIcon[0], listIcon[1], 'icon-item');
     }
 
