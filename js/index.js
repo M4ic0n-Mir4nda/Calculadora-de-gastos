@@ -109,6 +109,10 @@ document.addEventListener('keyup', event => {
     }
 })
 
-salario.addEventListener('keyup', () => {
-    calcularGastos();
-})
+try {
+    salario.addEventListener('keyup', () => {
+        calcularGastos();
+    })
+} catch (err) {
+    console.log('Erro esperado:', err)
+}
