@@ -47,6 +47,51 @@ body {
     color: #FCFC3F;
 }
 
+#burguer {
+    background-color: #A4243B;
+    display: none;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer; 
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #A4243B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #9b9b9b;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 .containers {
     display: flex;
     justify-content: center;
@@ -76,14 +121,6 @@ body {
 
 .container-item {
     margin-bottom: 50px;
-}
-
-span {
-    display: block;
-    width: 100%;
-    border: 1px solid rgb(136, 136, 136);
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .icon-item {
@@ -245,5 +282,125 @@ span {
     background-color: rgb(75, 202, 75);
 }
 
-/* Index */
 
+@media (max-width: 1371px) {
+    .container-section {
+        width: 700px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .container-section {
+        width: 500px;
+    }
+}
+
+@media (max-width: 960px) {
+    .container-section {
+        width: 430px;
+    }
+
+    .salario {
+        margin: 50px auto;
+        width: 280px;
+    }
+
+    .gastos-totais {
+        margin: 50px auto;
+        width: 280px;
+    }
+
+    .container-mensagem {
+        margin: 50px auto;
+        width: 300px;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 600px) {
+    #mySidenav {
+      width: 0;
+    }
+  }
+
+/* Index */
+/* Small Sizes */
+@media (max-width: 782px) { 
+    .containers {
+        display: block;
+    }
+
+    .container-header h1 {
+        display: none;
+    }
+
+    .container-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .icon-header {
+        padding-left: 10px;
+    }
+
+    #burguer {
+        margin: 0;
+        display: block;
+    }
+
+    #itens a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    /* Exiba a lista quando o menu for clicado */
+    #burguer:hover + #itens,
+    #itens:hover {
+        display: block;
+    }
+
+    .container-section {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .labels {
+        display: block;
+        width: 100%;
+    }
+
+    .labels p {
+        width: 100%;
+    }
+
+    .container-valores {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .salario {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .gastos-totais {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+    .container-mensagem {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+}

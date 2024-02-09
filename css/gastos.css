@@ -63,6 +63,51 @@ body {
     color: #FCFC3F;
 }
 
+#burguer {
+    background-color: #A4243B;
+    display: none;
+    color: white;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer; 
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #A4243B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #9b9b9b;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 .containers {
     width: 900px;
     margin: 50px auto;
@@ -288,41 +333,55 @@ td.valor, td.categoria, td.icon {
 @media (max-width: 921px) { 
     .container-header {
         width: 100%;
-    }
+}
 
-    .container-header h1 {
-        display: none;
-    }
+.container-header h1 {
+    display: none;
+}
 
-    .containers {
-        width: 95%;
-    }
+.containers {
+    width: 95%;
+}
 
-    .dados {
+.dados {
+    display: block;
+}
+
+nav {
+    display: none;
+}
+
+.table th,
+.table td {
+    font-size: 1em;
+}
+
+.table-action thead {
+    display: none;
+}
+.table-action tr {
+    border-bottom: 1px solid #dddddd;
+}
+.table-action td {
+    border: 0;
+}
+.table-action td:not(:first-child) {
+    display: block;
+}
+}
+
+@media screen and (max-width: 782px) {
+    #burguer {
+        margin: 0;
         display: block;
     }
 
-    nav {
-        display: none;
+    .container-header {
+        display: flex;
+        justify-content: space-between;
     }
 
-    .table th,
-    .table td {
-        font-size: 1em;
+    .icon-header {
+        padding-left: 10px;
     }
-
-    .table-action thead {
-      display: none;
-    }
-    .table-action tr {
-      border-bottom: 1px solid #dddddd;
-    }
-    .table-action td {
-      border: 0;
-    }
-    .table-action td:not(:first-child) {
-      display: block;
-    }
-
-
 }

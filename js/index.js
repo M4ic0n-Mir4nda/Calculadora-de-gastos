@@ -101,6 +101,14 @@ function calcularGastos() {
     }
 }
 
+function openSideBar() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+  
+function closeSideBar() {
+document.getElementById("mySidenav").style.width = "0";
+}
+
 document.addEventListener('keyup', event => {
     const el = event.target;
     if (el.classList.contains('input-value')) {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculadora de Gastos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
@@ -12,11 +13,20 @@
         <div class="container-header">
             <h1 class="title-header">Calculadora <br> de Gastos</h1>
             <i class="bi bi-piggy-bank-fill icon-header"></i>
-            <nav class="menu">
-                <a href="/index.html">Calculadora</a>
-                <a href="/gastoDiario.html">Gastos Diario</a>
-                <a href="#">Histórico</a>
-            </nav>
+            <div>
+                <nav class="menu">
+                    <a href="/index.html">Calculadora</a>
+                    <a href="/gastoDiario.html">Gastos Diario</a>
+                </nav>
+                <span class="material-symbols-outlined" id="burguer" onclick="openSideBar()">
+                    menu
+                </span> 
+                <menu id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeSideBar()">&times;</a>
+                    <a href="/index.html">Calculadora</a>
+                    <a href="/gastoDiario.html">Gastos Diario</a>
+                </menu> 
+            </div>         
         </div>
     </header>
     <section class="containers">
@@ -288,7 +298,7 @@
                 <span></span>
             </div>
         </div>
-        <div class="containes-valores">
+        <div class="container-valores">
             <div class="salario">
                 <h2>Salário</h2>
                 <p>

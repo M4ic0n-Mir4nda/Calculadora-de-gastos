@@ -119,6 +119,14 @@ function criaLinha(item) {
     tr.appendChild(td4);    
 }
 
+function openSideBar() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+  
+function closeSideBar() {
+document.getElementById("mySidenav").style.width = "0";
+}
+
 form.addEventListener('submit', (e) => {
     const descricao = document.querySelector('#descricao');
     const valor = document.querySelector("#valor");
