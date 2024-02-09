@@ -361,6 +361,14 @@ body {
         color: #333;
     }
 
+    .icon-item {
+        margin-left: 0;
+    }
+
+    .title-item h2 {
+        margin-left: 6px;
+    }
+
     /* Exiba a lista quando o menu for clicado */
     #burguer:hover + #itens,
     #itens:hover {
