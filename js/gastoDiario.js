@@ -1,5 +1,9 @@
 const form = document.querySelector('.form');
+
+//
 const listaData = document.querySelector('.lista-data');
+const oDefault = document.querySelector('.option-default');
+//
 
 //
 const data = document.querySelector('.data');
@@ -27,8 +31,7 @@ itens.forEach((item) => {
     }
 })
 
-listaData.value = dataFormatada;
-
+oDefault.innerHTML = dataFormatada;
 
 class Item {
     constructor(nome, valor, categoria, data) {
@@ -192,7 +195,7 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    const item = new Item(descricao.value, valor.value, categoria.value, "09/04/2024");
+    const item = new Item(descricao.value, valor.value, categoria.value, data.textContent);
     criaLinha(item);
 
     somaTotal(item);

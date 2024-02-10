@@ -30,7 +30,9 @@
         </div>
     </header>
     <div class="datas">
-        <select class="lista-data"></select>
+        <select class="lista-data">
+            <option class="option-default"></option>
+        </select>
     </div>
     <section class="containers">
         <div class="container-box">
@@ -53,7 +55,7 @@
                     </div>
                     <div class="inputs">
                         <label>Valor</label>
-                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" id="valor">
+                        <input type="text" oninput="setValorInput(this)" value="R$ 0,00" class="input-value" id="valor" autocomplete="off">
                     </div>
                     <div class="inputs">
                         <label>Categoria</label>
