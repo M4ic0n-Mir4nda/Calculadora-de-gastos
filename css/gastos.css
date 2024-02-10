@@ -29,16 +29,17 @@ body {
 
 /* Index */
 
+
+.icon-header {
+    font-size: 90px;
+    color: #FCFC3F;
+}
+
 .container-header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: #A4243B;
-}
-
-.icon-header {
-    font-size: 90px;
-    color: #FCFC3F;
 }
 
 .title-header {
@@ -106,6 +107,22 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+}
+
+.datas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lista-data {
+    display: flex;
+    background-color: #FFFF;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .containers {
@@ -327,6 +344,13 @@ td.valor, td.categoria, td.icon {
 
 .icon-column {
     text-align: center;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
 }
 
 /* Small Sizes */

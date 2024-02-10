@@ -1,15 +1,34 @@
 const form = document.querySelector('.form');
+const listaData = document.querySelector('.lista-data');
+
+//
 const data = document.querySelector('.data');
 const date = new Date();
 date.setDate(date.getDate())
 const dataFormatada = date.toLocaleDateString();
 data.innerHTML = dataFormatada
+//
 
 let itens = JSON.parse(localStorage.getItem('itens')) ||  [];
+let total = 0;
 
 itens.forEach((item) => {
-    criaLinha(item)
+    if (item.data == data.textContent) {
+        criaLinha(item);
+        somaTotal(item);
+    }
+
+    const option = document.createElement('option')
+    if (listaData.textContent.includes(item.data)) {
+        return;
+    } else {
+        option.innerHTML = item.data;
+        listaData.appendChild(option);
+    }
 })
+
+listaData.value = dataFormatada;
+
 
 class Item {
     constructor(nome, valor, categoria, data) {
@@ -52,6 +71,34 @@ function slice(text) {
     return num;
 }
 
+function criaLinha(item) {
+    const tabela = document.querySelector('.table-container');
+    const tbody = document.createElement('tbody');
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
+    const td3 = document.createElement('td');
+    const td4 = document.createElement('td');
+
+    td1.innerText = item.nome;
+    td2.innerText = parseFloat(item.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    td3.innerText = item.categoria;
+    td4.appendChild(criaIcone(item.categoria))
+
+    td4.classList.add('icon')
+    td2.classList.add('valor');
+    td3.classList.add('categoria');
+    td3.classList.add('icon-item');
+    tbody.classList.add('tbody');
+
+    tabela.appendChild(tbody);
+    tbody.appendChild(tr);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+}
+
 function criaIcone(categoria) {
     const icons = ['bi bi-house', 'bi bi-basket-fill', 'bi bi-heart-fill', 'bi bi-bus-front-fill', 'bi bi-pencil-square', 'bi bi-controller'];
     const categorias = ['Casa', 'Alimentação', 'Saúde e Beleza', 'Transporte', 'Educação', 'Lazer e Extras']
@@ -92,40 +139,47 @@ function criaIcone(categoria) {
     return icone;
 }
 
-function criaLinha(item) {
-    const tabela = document.querySelector('.table-container');
-    const tbody = document.createElement('tbody');
-    const tr = document.createElement('tr');
-    const td1 = document.createElement('td');
-    const td2 = document.createElement('td');
-    const td3 = document.createElement('td');
-    const td4 = document.createElement('td');
-
-    td1.innerText = item.nome;
-    td2.innerText = parseFloat(item.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    td3.innerText = item.categoria;
-    td4.appendChild(criaIcone(item.categoria))
-
-    td4.classList.add('icon')
-    td2.classList.add('valor');
-    td3.classList.add('categoria');
-    td3.classList.add('icon-item');
-
-    tabela.appendChild(tbody);
-    tbody.appendChild(tr);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);    
-}
-
 function openSideBar() {
     document.getElementById("mySidenav").style.width = "250px";
 }
   
 function closeSideBar() {
-document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.width = "0";
 }
+
+function dataDefinida() {
+    data.textContent = listaData.value;
+    total = 0;
+
+    itens.forEach((item) => {
+        if (data.textContent.includes(item.data)) {
+            criaLinha(item);
+            somaTotal(item);
+        }
+    })
+}
+
+function removeLinha() {
+    const table = document.querySelector('.table');
+    const tbody = table.querySelectorAll('.tbody');
+
+    tbody.forEach((item) => {
+        item.remove();
+    })
+}
+
+function somaTotal(itens) {
+    total += parseFloat(itens.valor);
+
+    const textoTotal = document.querySelector('.total-reais');
+
+    textoTotal.innerHTML = parseFloat(total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+}
+
+listaData.addEventListener('change', () => {
+    removeLinha();
+    dataDefinida();
+}) 
 
 form.addEventListener('submit', (e) => {
     const descricao = document.querySelector('#descricao');
@@ -138,8 +192,10 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    const item = new Item(descricao.value, valor.value, categoria.value, data.textContent);
+    const item = new Item(descricao.value, valor.value, categoria.value, "09/04/2024");
     criaLinha(item);
+
+    somaTotal(item);
 
     itens.push(item)
 
