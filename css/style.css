@@ -159,6 +159,11 @@ body {
     width: 300px;
 }
 
+.labels .input-value {
+    padding: 13px;
+    font-size: 1.1em;
+}
+
 .total {
     display: flex;
     justify-content: space-between;
