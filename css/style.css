@@ -159,7 +159,7 @@ body {
     width: 300px;
 }
 
-.labels .input-value {
+.labels .input-value, .salario .input-value-salario {
     padding: 13px;
     font-size: 1.1em;
 }
