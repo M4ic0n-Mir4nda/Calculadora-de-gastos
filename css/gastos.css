@@ -244,7 +244,7 @@ body {
     margin: 0 auto;
 }
 
-.botao-confirmar {
+.botao-confirmar, .botao-clear {
     width: 200px;
     background-color: #6278F7;
     border-radius: 10px;
@@ -260,6 +260,23 @@ body {
 
 .botao-confirmar:hover {
     color: #95FFD4;
+}
+
+.div-clear {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.botao-clear {
+    text-align: center;
+    background-color: rgb(241, 64, 64);
+    padding: 10px;
+}
+
+.botao-clear:hover {
+    opacity: 0.9;
 }
 
 .conteiner-box-table {

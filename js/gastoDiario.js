@@ -1,20 +1,28 @@
+// Form dos itens
 const form = document.querySelector('.form');
 
-//
-const listaData = document.querySelector('.lista-data');
-const oDefault = document.querySelector('.option-default');
-//
-
-//
+// Definição e Formatação das datas
+const selectData = document.querySelector('.lista-data');
 const data = document.querySelector('.data');
 const date = new Date();
 date.setDate(date.getDate())
 const dataFormatada = date.toLocaleDateString();
 data.innerHTML = dataFormatada
-//
 
-let itens = JSON.parse(localStorage.getItem('itens')) ||  [];
+// Items salvos no localStorage
+let itens = JSON.parse(localStorage.getItem('itens')) || [];
 let total = 0;
+
+const btnClear = document.querySelector('.botao-clear');
+
+// Função para apagar itens do localStorage
+btnClear.addEventListener('click', () => {
+    if (!JSON.parse(localStorage.getItem('itens'))) {
+        alert('Não há itens no histórico!');
+        return;
+    }
+    limparHistorico();
+})
 
 itens.forEach((item) => {
     if (item.data == data.textContent) {
@@ -22,16 +30,20 @@ itens.forEach((item) => {
         somaTotal(item);
     }
 
-    const option = document.createElement('option')
-    if (listaData.textContent.includes(item.data)) {
+    const option = document.createElement('option');
+    if (selectData.textContent.includes(item.data)) {
         return;
     } else {
         option.innerHTML = item.data;
-        listaData.appendChild(option);
+        selectData.appendChild(option);
     }
-})
+});
 
-oDefault.innerHTML = dataFormatada;
+if (selectData.options.length === 0) {
+    const optionDefault = document.createElement('option');
+    optionDefault.innerHTML = dataFormatada;
+    selectData.appendChild(optionDefault)
+}
 
 class Item {
     constructor(nome, valor, categoria, data) {
@@ -151,7 +163,7 @@ function closeSideBar() {
 }
 
 function dataDefinida() {
-    data.textContent = listaData.value;
+    data.textContent = selectData.value;
     total = 0;
 
     itens.forEach((item) => {
@@ -179,7 +191,12 @@ function somaTotal(itens) {
     textoTotal.innerHTML = parseFloat(total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
 
-listaData.addEventListener('change', () => {
+function limparHistorico() {
+    localStorage.clear();
+    window.location.reload();
+}
+
+selectData.addEventListener('change', () => {
     removeLinha();
     dataDefinida();
 }) 
@@ -209,4 +226,4 @@ form.addEventListener('submit', (e) => {
     categoria.value = '';
 
     e.preventDefault();
-})
+});
